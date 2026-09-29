@@ -31,10 +31,10 @@ export type Social = { label: string; handle: string; href: string };
 export const socials: Social[] = [
   { label: "LinkedIn", handle: "in/chandralegend", href: "https://www.linkedin.com/in/chandralegend/" },
   { label: "GitHub", handle: "@chandralegend", href: "https://github.com/chandralegend" },
+  { label: "X", handle: "@xchandralegend", href: "https://x.com/xchandralegend" },
   { label: "Google Scholar", handle: "197 citations", href: "https://scholar.google.com/citations?user=VepbpE8AAAAJ" },
   { label: "ORCID", handle: "0009-0002-2230-4403", href: "https://orcid.org/0009-0002-2230-4403" },
   { label: "Instagram", handle: "@realchandralegend", href: "https://www.instagram.com/realchandralegend/" },
-  // { label: "X", handle: "@realchandralegend", href: "https://x.com/realchandralegend" }, // add once the account exists
 ];
 
 export const linkedin = socials[0].href;

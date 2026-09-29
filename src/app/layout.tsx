@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     lastName: site.lastName,
     images: [{ url: "/og.png", width: 1200, height: 630, alt: `${site.name} — ${site.tagline}` }],
   },
-  twitter: { card: "summary_large_image", title: site.title, description: site.description, images: ["/og.png"] },
+  twitter: { card: "summary_large_image", creator: "@xchandralegend", site: "@xchandralegend", title: site.title, description: site.description, images: ["/og.png"] },
   robots: { index: true, follow: true },
 };
 
