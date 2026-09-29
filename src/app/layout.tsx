@@ -72,8 +72,9 @@ const jsonLd = {
   sameAs: socials.map((s) => s.href),
 };
 
-// Runs before first paint: enables JS-only styles, and shows the preloader once per session.
-const boot = `(function(){var d=document.documentElement;d.classList.add('js');var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;var v=false;try{v=!!sessionStorage.getItem('visited')}catch(e){}d.classList.add(v||r?'no-preloader':'is-loading');setTimeout(function(){if(!window.__animReady)d.classList.add('reveal-all');if(!window.__preloaderDone){d.classList.remove('is-loading');d.classList.add('no-preloader')}},7000)})();`;
+// Runs before first paint: enables JS-only styles, shows the preloader once per session,
+// and removes any service worker left over from the previous site.
+const boot = `(function(){var d=document.documentElement;d.classList.add('js');var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;var v=false;try{v=!!sessionStorage.getItem('visited')}catch(e){}d.classList.add(v||r?'no-preloader':'is-loading');if('serviceWorker'in navigator)navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(x){x.unregister()})});setTimeout(function(){if(!window.__animReady)d.classList.add('reveal-all');if(!window.__preloaderDone){d.classList.remove('is-loading');d.classList.add('no-preloader')}},7000)})();`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
