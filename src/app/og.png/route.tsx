@@ -1,21 +1,13 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { site } from "@/lib/content";
+import { ogFonts } from "@/lib/og-fonts";
 
 // Social preview card, served at /og.png so static hosts send the right content type.
 export const dynamic = "force-static";
 
 const size = { width: 1200, height: 630 };
 
-const fonts = join(process.cwd(), "node_modules/@fontsource");
-
 export async function GET() {
-  const [serif, serifItalic, mono] = await Promise.all([
-    readFile(join(fonts, "instrument-serif/files/instrument-serif-latin-400-normal.woff")),
-    readFile(join(fonts, "instrument-serif/files/instrument-serif-latin-400-italic.woff")),
-    readFile(join(fonts, "geist-mono/files/geist-mono-latin-400-normal.woff")),
-  ]);
 
   return new ImageResponse(
     (
@@ -107,13 +99,6 @@ export async function GET() {
         </div>
       </div>
     ),
-    {
-      ...size,
-      fonts: [
-        { name: "Instrument Serif", data: serif, style: "normal", weight: 400 },
-        { name: "Instrument Serif", data: serifItalic, style: "italic", weight: 400 },
-        { name: "Geist Mono", data: mono, style: "normal", weight: 400 },
-      ],
-    },
+    { ...size, fonts: await ogFonts() },
   );
 }

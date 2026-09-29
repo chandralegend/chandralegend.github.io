@@ -19,6 +19,19 @@ bio, roles, projects, publications, journey, talks and contact links.
 - **GitHub stars** refresh at build time (and weekly via the deploy workflow).
 - **Scholar numbers** are static — update `scholar` and `publications` when they change.
 
+## Writing (blog)
+
+Articles are Markdown files in [`content/blog/`](content/blog/), one per post,
+named `<slug>.md`. Copy [`_template.md`](content/blog/_template.md) to start.
+
+- `draft: true` keeps a post out of the build. Preview drafts locally with
+  `BLOG_DRAFTS=1 npm run dev`.
+- Each post gets its own link-preview image (`/blog/<slug>/og.png`), an entry in
+  the RSS feed (`/blog/feed.xml`) and the sitemap.
+- The Blog link in the nav and footer appears once the first post is published.
+- After sharing a post on LinkedIn, add its URL as `linkedin:` so the article
+  shows a "Discuss on LinkedIn" button.
+
 ## Run locally
 
 ```bash

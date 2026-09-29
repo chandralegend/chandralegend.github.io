@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import { getPosts } from "@/lib/blog";
 import { roles, site, socials } from "@/lib/content";
 import SceneLoader from "@/components/canvas/SceneLoader";
 import SmoothScroll from "@/components/providers/SmoothScroll";
@@ -18,6 +19,9 @@ const display = Instrument_Serif({
   style: ["normal", "italic"],
   variable: "--font-instrument",
 });
+
+// Blog links (nav, footer, RSS) appear once there is at least one published post.
+const hasBlog = getPosts().length > 0;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
     "Stekz",
     "Sri Lanka",
   ],
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", ...(hasBlog && { types: { "application/rss+xml": "/blog/feed.xml" } }) },
   openGraph: {
     type: "profile",
     url: "/",
@@ -73,9 +77,9 @@ const jsonLd = {
   sameAs: socials.map((s) => s.href),
 };
 
-// Runs before first paint: enables JS-only styles, shows the preloader once per session,
+// Runs before first paint: enables JS-only styles, shows the preloader once per session (homepage only),
 // and removes any service worker left over from the previous site.
-const boot = `(function(){var d=document.documentElement;d.classList.add('js');var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;var v=false;try{v=!!sessionStorage.getItem('visited')}catch(e){}d.classList.add(v||r?'no-preloader':'is-loading');if('serviceWorker'in navigator)navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(x){x.unregister()})});setTimeout(function(){if(!window.__animReady)d.classList.add('reveal-all');if(!window.__preloaderDone){d.classList.remove('is-loading');d.classList.add('no-preloader')}},7000)})();`;
+const boot = `(function(){var d=document.documentElement;d.classList.add('js');var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;var v=location.pathname!=='/';try{v=v||!!sessionStorage.getItem('visited')}catch(e){}d.classList.add(v||r?'no-preloader':'is-loading');if('serviceWorker'in navigator)navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(x){x.unregister()})});setTimeout(function(){if(!window.__animReady)d.classList.add('reveal-all');if(!window.__preloaderDone){d.classList.remove('is-loading');d.classList.add('no-preloader')}},7000)})();`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -91,7 +95,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SceneLoader />
         <div className="vignette" aria-hidden="true" />
         <Preloader />
-        <Nav />
+        <Nav blog={hasBlog} />
         {children}
         <PhaseHud />
         <Terminal />

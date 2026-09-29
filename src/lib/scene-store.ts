@@ -42,6 +42,11 @@ export const MOON_STOPS: Record<string, StopSet> = {
     desktop: { nx: 0, ny: 0.02, s: 0.92, orbits: 0.6, dim: 1 },
     mobile: { nx: 0, ny: 0.08, s: 0.62, orbits: 0.5, dim: 1 },
   },
+  // Reading pages (blog): a small moon tucked top-right, away from the text column.
+  page: {
+    desktop: { nx: 0.4, ny: 0.3, s: 0.26, orbits: 0.35, dim: 0.6 },
+    mobile: { nx: 0.36, ny: 0.4, s: 0.2, orbits: 0.2, dim: 0.35 },
+  },
   // The moon sets behind the footer wordmark.
   moonset: {
     desktop: { nx: 0, ny: -0.8, s: 1.1, orbits: 0.2, dim: 0.9 },

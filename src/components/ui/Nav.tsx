@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type PointerEvent } from "react";
+import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { sections, site, socials } from "@/lib/content";
@@ -20,8 +21,13 @@ function scramble(e: PointerEvent<HTMLElement>) {
   });
 }
 
-export default function Nav() {
+export default function Nav({ blog = false }: { blog?: boolean }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const home = pathname === "/";
+  const onBlog = pathname.startsWith("/blog");
+  // Section anchors scroll in place on the homepage and route home from anywhere else.
+  const to = (id: string) => (home ? `#${id}` : `/#${id}`);
   const header = useRef<HTMLElement>(null);
 
   // Hide while scrolling down, reveal on the way up.
@@ -55,7 +61,7 @@ export default function Nav() {
   return (
     <header className="nav" ref={header} data-state="top">
       <div className="nav__bar" data-hero-fade>
-        <a href="#top" className="nav__brand" aria-label={`${site.name} — back to top`} onClick={() => setOpen(false)}>
+        <a href={home ? "#top" : "/"} className="nav__brand" aria-label={`${site.name} — back to top`} onClick={() => setOpen(false)}>
           <MoonIcon live className="nav__moon" />
           <span className="nav__name">
             Chandra <em>Irugalbandara</em>
@@ -66,7 +72,7 @@ export default function Nav() {
           <ul>
             {sections.map((s, i) => (
               <li key={s.id}>
-                <a href={`#${s.id}`} onPointerEnter={scramble}>
+                <a href={to(s.id)} onPointerEnter={scramble}>
                   <span className="nav__num" aria-hidden="true">
                     0{i + 1}
                   </span>
@@ -74,6 +80,17 @@ export default function Nav() {
                 </a>
               </li>
             ))}
+            {blog && (
+              <li>
+                {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- full load, so homepage scroll pins never leak into the blog */}
+                <a href="/blog/" onPointerEnter={scramble} aria-current={onBlog ? "page" : undefined}>
+                  <span className="nav__num" aria-hidden="true">
+                    0{sections.length + 1}
+                  </span>
+                  <span data-label="Blog">Blog</span>
+                </a>
+              </li>
+            )}
           </ul>
         </nav>
 
@@ -82,7 +99,7 @@ export default function Nav() {
             <span aria-hidden="true">&gt;_</span>
           </button>
           <Magnetic className="nav__cta">
-            <a className="pill pill--solid" href="#contact">
+            <a className="pill pill--solid" href={to("contact")}>
               <span>Let’s talk</span>
             </a>
           </Magnetic>
@@ -105,12 +122,21 @@ export default function Nav() {
           <ol className="menu__links">
             {sections.map((s, i) => (
               <li key={s.id}>
-                <a href={`#${s.id}`} onClick={() => setOpen(false)}>
+                <a href={to(s.id)} onClick={() => setOpen(false)}>
                   <span className="menu__num">0{i + 1}</span>
                   {s.label}
                 </a>
               </li>
             ))}
+            {blog && (
+              <li>
+                {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- full load, so homepage scroll pins never leak into the blog */}
+                <a href="/blog/" onClick={() => setOpen(false)}>
+                  <span className="menu__num">0{sections.length + 1}</span>
+                  Blog
+                </a>
+              </li>
+            )}
           </ol>
         </nav>
         <div className="menu__foot">

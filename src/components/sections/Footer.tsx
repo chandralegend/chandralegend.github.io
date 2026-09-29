@@ -1,7 +1,9 @@
+import { getPosts } from "@/lib/blog";
 import { site } from "@/lib/content";
 import TerminalButton from "@/components/ui/TerminalButton";
 
 export default function Footer() {
+  const blog = getPosts().length > 0;
   return (
     <footer className="footer" data-moon="moonset">
       <div className="container footer__top">
@@ -13,6 +15,12 @@ export default function Footer() {
           <TerminalButton className="footer__terminal">
             Press <kbd>~</kbd> for a terminal
           </TerminalButton>
+          {blog && (
+            // eslint-disable-next-line @next/next/no-html-link-for-pages -- full load, so homepage scroll pins never leak into the blog
+            <a href="/blog/" className="footer__back">
+              Writing <span aria-hidden="true">↗</span>
+            </a>
+          )}
           <a href="#top" className="footer__back" data-cursor="Up">
             Back to orbit <span aria-hidden="true">↑</span>
           </a>
