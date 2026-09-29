@@ -11,7 +11,7 @@ export const site = {
   url: "https://chandralegend.github.io",
   title: "Chandra Irugalbandara — AI engineer, researcher & builder",
   description:
-    "I build reliable AI systems, invent new tools, and make existing ones better. Associate Technical Lead at Stekz, researcher & builder at Leaf Monkey Labs, creator of Nomos.",
+    "I build reliable AI systems, invent new tools, and make existing ones better. Associate Technical Lead (AI) at Gapstars, founder of Leaf Monkey Labs, creator of Nomos.",
   tagline: "I build reliable AI systems, invent new tools, and make existing ones better.",
   roleLine: "AI engineer · Researcher · Builder",
   location: {
@@ -21,7 +21,7 @@ export const site = {
     coords: "6°55′N 79°51′E",
   },
   // Public contact email. Leave empty to route every CTA to LinkedIn instead.
-  email: "",
+  email: "irugalbandarachandra@gmail.com",
   availability: ["Speaking", "Client projects", "Investor conversations"],
   nameMeaning: "Chandra — Sanskrit for “moon”.",
 };
@@ -40,8 +40,8 @@ export const socials: Social[] = [
 export const linkedin = socials[0].href;
 
 export const roles = [
-  { title: "Associate Technical Lead", org: "Stekz", href: "https://www.stekz.com" },
-  { title: "Researcher & Builder", org: "Leaf Monkey Labs", href: "https://leafmonkey.org" },
+  { title: "Associate Technical Lead (AI)", org: "Gapstars", href: "https://www.gapstars.net" },
+  { title: "Founder", org: "Leaf Monkey Labs", href: "https://leafmonkey.org" },
   { title: "Creator", org: "Nomos", href: "https://github.com/dowhiledev/nomos" },
 ];
 
@@ -62,7 +62,7 @@ export const pillars = [
   {
     index: "iii",
     title: "Building",
-    body: "Technical leadership at Stekz, and new AI-native products at Leaf Monkey Labs — from first sketch to production.",
+    body: "Technical leadership on agentic AI at Gapstars, and new AI-native products at Leaf Monkey Labs — from first sketch to production.",
   },
 ];
 
@@ -241,19 +241,27 @@ export type JourneyItem = {
 export const journey: JourneyItem[] = [
   {
     period: "Now",
-    title: "Associate Technical Lead",
-    org: "Stekz",
-    href: "https://www.stekz.com",
-    note: "Technical leadership — turning ambitious product ideas into dependable, shipped software.",
+    title: "Associate Technical Lead (AI)",
+    org: "Gapstars",
+    href: "https://www.gapstars.net",
+    note: "Agentic AI with Stekz, and Data/AI Guild Master — turning ambitious product ideas into dependable, shipped software.",
     phase: 1,
   },
   {
     period: "Now",
-    title: "Researcher & Builder",
+    title: "Founder",
     org: "Leaf Monkey Labs",
     href: "https://leafmonkey.org",
-    note: "Applied AI research and AI-native product development, built in Sri Lanka and published where it holds up.",
-    phase: 0.86,
+    note: "Building Salli, personal finance for Sri Lanka, alongside applied AI research that’s published where it holds up.",
+    phase: 0.9,
+  },
+  {
+    period: "Now",
+    title: "Visiting Lecturer",
+    org: "University of Moratuwa",
+    href: "https://uom.lk",
+    note: "Back where it started — showing students the world of AI beyond the theory.",
+    phase: 0.8,
   },
   {
     period: "Ongoing",
@@ -264,11 +272,18 @@ export const journey: JourneyItem[] = [
     phase: 0.7,
   },
   {
+    period: "2024 — 2025",
+    title: "Senior AI/ML Engineer",
+    org: "Virtusa",
+    note: "Agentic customer experience for UnitedHealth Group, built with Google.",
+    phase: 0.6,
+  },
+  {
     period: "2022 — 2024",
     title: "Machine Learning Engineer",
     org: "Jaseci Labs",
     note: "Research and engineering on LLM integration for the Jac language. First-authored “Scaling Down to Scale Up” (ISPASS ’24).",
-    phase: 0.5,
+    phase: 0.45,
   },
   {
     period: "2017 — 2022",
@@ -279,8 +294,8 @@ export const journey: JourneyItem[] = [
   },
 ];
 
-// Earlier roles without full details yet — add them to `journey` once you have titles and dates.
-export const alsoAt = ["Virtusa", "UHG / Optum"];
+// Earlier roles shown as a one-line footnote under the timeline.
+export const alsoAt = ["promiseQ"];
 
 export const talks = [
   {

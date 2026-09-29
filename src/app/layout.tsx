@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "AI agents",
     "Nomos",
     "Leaf Monkey Labs",
+    "Gapstars",
     "Stekz",
     "Sri Lanka",
   ],

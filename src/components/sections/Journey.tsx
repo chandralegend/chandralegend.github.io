@@ -13,7 +13,7 @@ export default function Journey() {
             Every phase, <em>so far</em>.
           </h2>
           <p className="lede" data-reveal="fade">
-            From smart-home research at Moratuwa to technical leadership at Stekz and applied AI research at Leaf Monkey Labs.
+            From smart-home research at Moratuwa to technical leadership at Gapstars, founding Leaf Monkey Labs, and teaching back at Moratuwa.
           </p>
         </header>
 

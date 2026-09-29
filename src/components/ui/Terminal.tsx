@@ -72,6 +72,7 @@ const NAMED_PHASES: Record<string, number> = { new: 0.02, crescent: 0.25, quarte
 const OPEN_TARGETS: Record<string, string> = {
   ...Object.fromEntries(socials.map((s) => [s.label.toLowerCase().split(" ").pop() ?? s.label, s.href])),
   ...Object.fromEntries(projects.map((p) => [p.id, p.href])),
+  gapstars: "https://www.gapstars.net",
   stekz: "https://www.stekz.com",
   leafmonkey: "https://leafmonkey.org",
 };
