@@ -33,6 +33,10 @@ export default function Animations() {
     // Moon framing: the last [data-moon] block crossing 62% of the viewport wins.
     // Measured every frame, so pinned sections and nested blocks just work.
     const blocks = gsap.utils.toArray<HTMLElement>("[data-moon]");
+    // About: while the portrait is pinned (sticky, wide screens), the moon parks just behind it
+    // so its lit limb rims the photo — an eclipse. Tracked every frame from the real layout.
+    const eclipse = document.querySelector<HTMLElement>("[data-eclipse]");
+    const ECLIPSE_SCALE = 1.12;
     let activeStop = "";
     const pickStop = () => {
       const line = window.innerHeight * 0.62;
@@ -40,6 +44,19 @@ export default function Animations() {
       for (const el of blocks) {
         const r = el.getBoundingClientRect();
         if (r.top <= line && r.bottom > line) id = el.dataset.moon ?? id;
+      }
+      if (id === "about" && eclipse?.parentElement && getComputedStyle(eclipse.parentElement).position === "sticky") {
+        const r = eclipse.getBoundingClientRect();
+        const { orbits, dim } = stopFor("about", false);
+        Object.assign(scene.stop, {
+          nx: (r.left + r.width / 2) / window.innerWidth - 0.5,
+          ny: 0.5 - (r.top + r.height / 2) / window.innerHeight,
+          s: (r.width * ECLIPSE_SCALE) / window.innerHeight,
+          orbits,
+          dim,
+        });
+        activeStop = "about:eclipse";
+        return;
       }
       const key = `${id}:${mobile.matches}`;
       if (key === activeStop) return;

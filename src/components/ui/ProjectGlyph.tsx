@@ -75,7 +75,7 @@ export default function ProjectGlyph({ type }: { type: Glyph }) {
           <circle cx="46" cy="28" r="3.5" className="glyph__fill glyph__fill--dim" />
           <circle cx="58" cy="28" r="3.5" className="glyph__accent-fill" />
           <text x="34" y="70" className="glyph__mono">
-            $ nutsh
+            $ moonsh
           </text>
           <text x="34" y="92" className="glyph__mono glyph__mono--dim">
             » ask it anything

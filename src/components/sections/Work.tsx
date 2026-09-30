@@ -1,21 +1,21 @@
-import type { Project } from "@/lib/content";
+import { projects } from "@/lib/content";
 import ProjectGlyph from "@/components/ui/ProjectGlyph";
 import TiltCard from "@/components/ui/TiltCard";
 
-export default function Work({ projects, stars }: { projects: Project[]; stars: number }) {
+export default function Work() {
   return (
     <section id="work" className="work" data-moon="work" data-hscroll aria-labelledby="work-title">
       <div className="work__track" data-hscroll-track>
         <div className="work__intro">
           <p className="eyebrow" data-scramble>
-            02 — Selected work
+            02 — Now building
           </p>
           <h2 id="work-title" className="display-lg" data-reveal="lines">
-            Things I’ve built — and keep <em>building</em>.
+            Products I’m <em>building</em> now.
           </h2>
           <p className="lede" data-reveal="fade">
-            Open-source tools for making AI behave: agents you can audit, typed prompting, a friendlier shell.{" "}
-            <span className="nowrap">{stars}★ on GitHub</span> and counting.
+            At Leaf Monkey Labs, a small studio in Colombo: AI that does real work for real customers, with the
+            deterministic parts done properly.
           </p>
           <p className="work__hint" aria-hidden="true">
             <span>Keep scrolling</span>
@@ -28,8 +28,9 @@ export default function Work({ projects, stars }: { projects: Project[]; stars: 
             <TiltCard className="project__card">
               <div className="project__top">
                 <span>{String(i + 1).padStart(2, "0")}</span>
-                <span>
-                  {p.status ?? "Open source"} · ★ {p.stars}
+                <span className="project__status">
+                  <span className="project__dot" aria-hidden="true" />
+                  {p.status}
                 </span>
               </div>
               <ProjectGlyph type={p.glyph} />
@@ -45,9 +46,10 @@ export default function Work({ projects, stars }: { projects: Project[]; stars: 
                   ))}
                 </ul>
               </div>
-              <a className="project__link" href={p.href} target="_blank" rel="noreferrer" data-cursor="Open">
+              <a className="project__link" href={p.href} target="_blank" rel="noreferrer" data-cursor="Visit">
                 <span>
-                  View <span className="sr-only">{p.name}</span> on GitHub
+                  <span className="sr-only">{p.name}: </span>
+                  {p.href.replace("https://", "")}
                 </span>
                 <span aria-hidden="true">↗</span>
               </a>
@@ -56,10 +58,10 @@ export default function Work({ projects, stars }: { projects: Project[]; stars: 
         ))}
 
         <div className="work__outro">
-          <a className="work__more" href="https://github.com/chandralegend" target="_blank" rel="noreferrer" data-cursor="Open">
-            <span className="work__more-kicker">More on GitHub</span>
+          <a className="work__more" href="https://leafmonkey.org" target="_blank" rel="noreferrer" data-cursor="Open">
+            <span className="work__more-kicker">The studio</span>
             <span className="work__more-title">
-              @chandralegend <span aria-hidden="true">↗</span>
+              Leaf Monkey Labs <span aria-hidden="true">↗</span>
             </span>
           </a>
         </div>

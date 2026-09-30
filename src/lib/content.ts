@@ -11,7 +11,7 @@ export const site = {
   url: "https://chandralegend.github.io",
   title: "Chandra Irugalbandara — AI engineer, researcher & builder",
   description:
-    "I build reliable AI systems, invent new tools, and make existing ones better. Associate Technical Lead (AI) at Gapstars, founder of Leaf Monkey Labs, creator of Nomos.",
+    "I build reliable AI systems, invent new tools, and make existing ones better. Associate Technical Lead (AI) at Gapstars and founder of Leaf Monkey Labs, building Salli and Pinglo.",
   tagline: "I build reliable AI systems, invent new tools, and make existing ones better.",
   roleLine: "AI engineer · Researcher · Builder",
   location: {
@@ -42,7 +42,7 @@ export const linkedin = socials[0].href;
 export const roles = [
   { title: "Associate Technical Lead (AI)", org: "Gapstars", href: "https://www.gapstars.net" },
   { title: "Founder", org: "Leaf Monkey Labs", href: "https://leafmonkey.org" },
-  { title: "Creator", org: "Nomos", href: "https://github.com/dowhiledev/nomos" },
+  { title: "Visiting Lecturer", org: "University of Moratuwa", href: "https://uom.lk" },
 ];
 
 export const manifesto =
@@ -56,22 +56,22 @@ export const pillars = [
   },
   {
     index: "ii",
-    title: "Open source",
-    body: "Tools other builders use: agents you can audit, typed prompting without JSON-schema boilerplate, and a friendlier Unix shell.",
+    title: "Products",
+    body: "Salli and Pinglo at Leaf Monkey Labs — AI that does real work for real customers, with deterministic engines wherever the numbers have to be right.",
   },
   {
     index: "iii",
-    title: "Building",
-    body: "Technical leadership on agentic AI at Gapstars, and new AI-native products at Leaf Monkey Labs — from first sketch to production.",
+    title: "Leading & teaching",
+    body: "Technical leadership on agentic AI at Gapstars, and teaching AI beyond the theory at the University of Moratuwa.",
   },
 ];
 
 export const marquee = [
   "Reliable AI",
-  "Agents you can audit",
+  "Agents that do real work",
   "Small models in production",
   "AI × programming languages",
-  "Open source",
+  "Built in Sri Lanka",
   "Thinking outside the box",
 ];
 
@@ -82,88 +82,35 @@ export type Project = {
   name: string;
   tagline: string;
   description: string;
-  repo: string;
   href: string;
-  site?: string;
   tags: string[];
-  stars: number; // fallback — refreshed from GitHub at build time
   glyph: Glyph;
-  status?: string;
+  status: string;
 };
 
+/** Products I'm building now, at Leaf Monkey Labs. */
 export const projects: Project[] = [
   {
-    id: "nomos",
-    name: "Nomos",
-    tagline: "Ship agents you can audit.",
+    id: "salli",
+    name: "Salli",
+    tagline: "Stop guessing. Start knowing.",
     description:
-      "A framework for building AI agents whose behaviour you can inspect and trust — so teams can put agents in production without crossing their fingers.",
-    repo: "dowhiledev/nomos",
-    href: "https://github.com/dowhiledev/nomos",
-    tags: ["Python", "AI agents", "Framework"],
-    stars: 88,
-    glyph: "orbits",
-  },
-  {
-    id: "semantix",
-    name: "Semantix",
-    tagline: "Structured outputs, without the schema.",
-    description:
-      "The framework behind my Meaning Typed Prompting paper: reliable structured output from LLMs using the types and meanings already in your code — no Pydantic, no JSON Schema.",
-    repo: "dowhiledev/semantix",
-    href: "https://github.com/dowhiledev/semantix",
-    tags: ["Python", "LLMs", "Prompting"],
-    stars: 27,
-    glyph: "types",
-    status: "Archived",
-  },
-  {
-    id: "nutshell",
-    name: "Nutshell",
-    tagline: "A friendlier Unix shell.",
-    description:
-      "An enhanced shell with a simplified command language, package management and AI-powered assistance built in — the terminal, minus the folklore.",
-    repo: "dowhiledev/nutshell",
-    href: "https://github.com/dowhiledev/nutshell",
-    tags: ["C", "Shell", "Developer tools"],
-    stars: 24,
-    glyph: "shell",
-  },
-  {
-    id: "vibelang",
-    name: "VibeLang",
-    tagline: "Prompts as a language feature.",
-    description:
-      "A programming language with native prompt blocks, so generative-AI features slot into any codebase as naturally as a function call.",
-    repo: "dowhiledev/vibelang",
-    href: "https://github.com/dowhiledev/vibelang",
-    tags: ["C", "Language design", "LLMs"],
-    stars: 0,
+      "Personal finance and tax planning built for Sri Lanka: a real double-entry ledger, a deterministic IRD tax engine, and an AI advisor that explains your numbers but never makes them up.",
+    href: "https://salli.leafmonkey.org",
+    tags: ["Personal finance", "Tax engine", "AI advisor"],
     glyph: "wave",
+    status: "Live",
   },
   {
-    id: "saf-eval",
-    name: "SAF-Eval",
-    tagline: "Is that answer actually true?",
+    id: "pinglo",
+    name: "Pinglo",
+    tagline: "Turn every enquiry into a paid booking.",
     description:
-      "Search-Augmented Factuality Evaluator — a modular Python package for checking the factuality of AI-generated responses against the open web.",
-    repo: "dowhiledev/saf-eval",
-    href: "https://github.com/dowhiledev/saf-eval",
-    tags: ["Python", "Evaluation", "Factuality"],
-    stars: 1,
-    glyph: "lens",
-  },
-  {
-    id: "uai",
-    name: "UAI",
-    tagline: "One interface, any agent framework.",
-    description:
-      "Unified Agent Interface — run different agent frameworks behind a single, consistent API, so switching stacks doesn’t mean rewriting your product.",
-    repo: "dowhiledev/uai",
-    href: "https://github.com/dowhiledev/uai",
-    tags: ["Python", "AI agents", "Interop"],
-    stars: 0,
+      "An AI booking assistant for businesses booked by the hour — courts, lessons, coaching. It answers on WhatsApp, Instagram, LINE and web chat, checks the real calendar, holds the slot and takes payment, and hands over to a human any time.",
+    href: "https://pinglo.leafmonkey.org",
+    tags: ["AI agents", "Bookings", "Payments"],
     glyph: "hub",
+    status: "Early access",
   },
 ];
 
@@ -252,7 +199,7 @@ export const journey: JourneyItem[] = [
     title: "Founder",
     org: "Leaf Monkey Labs",
     href: "https://leafmonkey.org",
-    note: "Building Salli, personal finance for Sri Lanka, alongside applied AI research that’s published where it holds up.",
+    note: "Building Salli, personal finance and tax for Sri Lanka, and Pinglo, an AI booking assistant for businesses booked by the hour.",
     phase: 0.9,
   },
   {
@@ -262,14 +209,6 @@ export const journey: JourneyItem[] = [
     href: "https://uom.lk",
     note: "Back where it started — showing students the world of AI beyond the theory.",
     phase: 0.8,
-  },
-  {
-    period: "Ongoing",
-    title: "Creator & maintainer",
-    org: "Open source",
-    href: "https://github.com/dowhiledev",
-    note: "Nomos, Semantix, Nutshell, VibeLang, SAF-Eval and UAI — tools for building AI that behaves.",
-    phase: 0.7,
   },
   {
     period: "2024 — 2025",
@@ -309,8 +248,8 @@ export const talks = [
     formats: ["Technical talk", "Workshop"],
   },
   {
-    title: "Agents you can audit",
-    blurb: "Building AI agents whose every decision can be inspected, tested and trusted — the thinking behind Nomos.",
+    title: "Agents that do real work",
+    blurb: "What it takes to let an AI agent take bookings and payments for a real business: guardrails, human handoff, and knowing when not to answer.",
     formats: ["Keynote", "Workshop"],
   },
   {

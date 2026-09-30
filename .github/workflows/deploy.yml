@@ -3,9 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  schedule:
-    # Weekly rebuild keeps GitHub star counts fresh.
-    - cron: "0 3 * * 1"
   workflow_dispatch:
 
 permissions:

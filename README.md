@@ -16,7 +16,6 @@ bio, roles, projects, publications, journey, talks and contact links.
   opens LinkedIn instead.
 - **Domain:** set `site.url` once your custom domain points at GitHub Pages,
   and add a `public/CNAME` file containing the domain.
-- **GitHub stars** refresh at build time (and weekly via the deploy workflow).
 - **Scholar numbers** are static — update `scholar` and `publications` when they change.
 
 ## Writing (blog)

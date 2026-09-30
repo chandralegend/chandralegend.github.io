@@ -46,12 +46,12 @@ const COMMANDS = [
 
 const HELP: [string, string][] = [
   ["whoami", "who you’re talking to"],
-  ["projects", "things I’ve built"],
+  ["projects", "what I’m building now"],
   ["research", "papers and citations"],
   ["journey", "where I’ve been"],
   ["talks", "what I speak about"],
   ["contact", "how to reach me"],
-  ["open <name>", "open github, linkedin, scholar, nomos…"],
+  ["open <name>", "open salli, pinglo, linkedin, scholar…"],
   ["goto <section>", "fly to a section of the page"],
   ["phase <new|quarter|full|0–1|auto>", "move the moon yourself"],
   ["neofetch", "system information"],
@@ -91,7 +91,7 @@ export default function Terminal() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
   const [lines, setLines] = useState<Line[]>(() => [
-    { id: 0, kind: "muted", node: "nutsh — a guest session on the moon" },
+    { id: 0, kind: "muted", node: "moonsh — a guest session on the moon" },
     {
       id: 1,
       node: (
@@ -226,12 +226,12 @@ export default function Terminal() {
         print(
           ...projects.map((p) => (
             <>
-              <Ext href={p.href}>{pad(p.name, 12)}</Ext>
-              <span className="term__muted">{pad(`★ ${p.stars}`, 8)}</span>
+              <Ext href={p.href}>{pad(p.name, 10)}</Ext>
+              <span className="term__muted">{pad(p.status, 14)}</span>
               {p.tagline}
             </>
           )),
-          { id: 0, kind: "muted", node: "open <name> to jump to a repo — e.g. open nomos" },
+          { id: 0, kind: "muted", node: "open <name> to visit — e.g. open salli" },
         );
         break;
       case "research":
@@ -349,8 +349,8 @@ export default function Terminal() {
           ["Role", `${roles[0].title} @ ${roles[0].org}`],
           ["Lab", roles[1].org],
           ["Research", `${scholar.citations} citations · h-index ${scholar.hIndex}`],
-          ["Open source", `${projects.length} projects · ${projects.reduce((n, x) => n + x.stars, 0)}★`],
-          ["Shell", "nutsh (guest)"],
+          ["Building", projects.map((x) => x.name).join(" · ")],
+          ["Shell", "moonsh (guest)"],
           ["Location", `${site.location.city}, ${site.location.country}`],
           ["Phase", `${phaseName(p)} (${Math.round(illumination(p) * 100)}%)`],
         ];
@@ -412,7 +412,7 @@ export default function Terminal() {
         close();
         break;
       default:
-        print({ id: 0, kind: "error", node: `nutsh: command not found: ${name}. Type 'help'.` });
+        print({ id: 0, kind: "error", node: `moonsh: command not found: ${name}. Type 'help'.` });
     }
   };
 
@@ -453,7 +453,7 @@ export default function Terminal() {
             <i />
             <i />
           </span>
-          <span id="term-title">nutsh — guest@moon</span>
+          <span id="term-title">moonsh — guest@moon</span>
           <button type="button" className="term__close" onClick={close} aria-label="Close terminal">
             esc
           </button>

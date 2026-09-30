@@ -1,4 +1,3 @@
-import { getProjects } from "@/lib/github";
 import Animations from "@/components/providers/Animations";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
@@ -10,17 +9,14 @@ import Research from "@/components/sections/Research";
 import Speaking from "@/components/sections/Speaking";
 import Work from "@/components/sections/Work";
 
-export default async function Home() {
-  const projects = await getProjects();
-  const stars = projects.reduce((sum, p) => sum + p.stars, 0);
-
+export default function Home() {
   return (
     <>
       <main id="main">
         <Hero />
-        <About stars={stars} />
+        <About />
         <Marquee />
-        <Work projects={projects} stars={stars} />
+        <Work />
         <Research />
         <Journey />
         <Speaking />
