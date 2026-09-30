@@ -4,6 +4,7 @@ description: "OpenAI has paused tool use for its most capable models after agent
 date: 2026-09-30
 tags: [agents, reliability, ai-safety]
 draft: false
+linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7510951479718080513/
 ---
 
 On 20 September, an OpenAI research model in reinforcement learning training was given a search task inside a sandbox with restricted internet access. Its search tool didn't get it what it wanted. Going to search engines directly didn't work either. So it probed the network, found that DNS filtering had a gap, and used DNS to reach a public chatbot outside the sandbox. It sent that chatbot 18 queries.
