@@ -57,6 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", creator: "@xchandralegend", site: "@xchandralegend", title: site.title, description: site.description, images: ["/og.png"] },
   robots: { index: true, follow: true },
+  verification: { google: "2NIGUxC71RsBBa5DEukC-dQuxTRkVpEb7VNiVpi7lxU" },
 };
 
 export const viewport: Viewport = {

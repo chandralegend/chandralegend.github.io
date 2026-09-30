@@ -38,6 +38,10 @@ export const MOON_STOPS: Record<string, StopSet> = {
     desktop: { nx: -0.33, ny: 0.2, s: 0.3, orbits: 0.45, dim: 0.9 },
     mobile: { nx: -0.32, ny: 0.35, s: 0.26, orbits: 0.3, dim: 0.45 },
   },
+  writing: {
+    desktop: { nx: 0.38, ny: 0.26, s: 0.24, orbits: 0.4, dim: 0.75 },
+    mobile: { nx: 0.36, ny: 0.4, s: 0.2, orbits: 0.2, dim: 0.4 },
+  },
   contact: {
     desktop: { nx: 0, ny: 0.02, s: 0.92, orbits: 0.6, dim: 1 },
     mobile: { nx: 0, ny: 0.08, s: 0.62, orbits: 0.5, dim: 1 },

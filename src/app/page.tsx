@@ -8,6 +8,7 @@ import Marquee from "@/components/sections/Marquee";
 import Research from "@/components/sections/Research";
 import Speaking from "@/components/sections/Speaking";
 import Work from "@/components/sections/Work";
+import Writing from "@/components/sections/Writing";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Research />
         <Journey />
         <Speaking />
+        <Writing />
         <Contact />
       </main>
       <Footer />

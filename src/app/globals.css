@@ -2623,3 +2623,11 @@ html:not(.js) .preloader,
     animation: none;
   }
 }
+
+/* Homepage: latest writing */
+.writing__head {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.writing__more {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
