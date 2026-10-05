@@ -32,7 +32,7 @@ export const socials: Social[] = [
   { label: "LinkedIn", handle: "in/chandralegend", href: "https://www.linkedin.com/in/chandralegend/" },
   { label: "GitHub", handle: "@chandralegend", href: "https://github.com/chandralegend" },
   { label: "X", handle: "@xchandralegend", href: "https://x.com/xchandralegend" },
-  { label: "Google Scholar", handle: "197 citations", href: "https://scholar.google.com/citations?user=VepbpE8AAAAJ" },
+  { label: "Google Scholar", handle: "201 citations", href: "https://scholar.google.com/citations?user=VepbpE8AAAAJ" },
   { label: "ORCID", handle: "0009-0002-2230-4403", href: "https://orcid.org/0009-0002-2230-4403" },
   { label: "Instagram", handle: "@realchandralegend", href: "https://www.instagram.com/realchandralegend/" },
 ];
@@ -116,10 +116,10 @@ export const projects: Project[] = [
 
 export const scholar = {
   href: "https://scholar.google.com/citations?user=VepbpE8AAAAJ",
-  citations: 197,
+  citations: 201,
   hIndex: 4,
   i10: 3,
-  asOf: "Sep 2026",
+  asOf: "Oct 2026",
 };
 
 export type Publication = {
@@ -137,7 +137,7 @@ export const publications: Publication[] = [
     title: "Scaling Down to Scale Up: A Cost-Benefit Analysis of Replacing OpenAI’s LLM with Open Source SLMs in Production",
     venue: "IEEE ISPASS 2024",
     year: 2024,
-    citations: 121,
+    citations: 122,
     note: "First author",
     summary: "When can a product team swap GPT-4 for self-hosted small language models — and what does it really cost them?",
     href: "https://arxiv.org/abs/2312.14972",
@@ -162,7 +162,7 @@ export const publications: Publication[] = [
     title: "A Secure and Smart Home Automation System with Speech Recognition and Power Measurement Capabilities",
     venue: "Sensors (MDPI)",
     year: 2023,
-    citations: 52,
+    citations: 55,
     summary: "Private, offline voice control for the home — with per-appliance power tracking, no cloud required.",
     href: "https://doi.org/10.3390/s23135784",
   },

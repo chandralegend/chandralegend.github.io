@@ -15,7 +15,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, ScrambleTextPlugin);
  *   data-reveal="lines"     masked line reveal
  *   data-reveal="fade"      fade + rise (optional data-delay)
  *   data-scrub-words        words brighten as you scroll
- *   data-count="197"        number counts up
+ *   data-count="201"        number counts up
  *   data-scramble           mono label scrambles in
  *   data-speed="0.2"        parallax drift
  *   data-hscroll            pinned horizontal gallery (desktop)
