@@ -4,6 +4,7 @@ description: "Pew asked an AI model to answer nearly 300 survey questions as rea
 date: 2026-10-07
 tags: [evals, reliability, llm]
 draft: false
+linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7513486414030770177/
 ---
 
 On 30 September, Pew Research Center published a [set of studies](https://www.pewresearch.org/data-labs/2026/09/30/can-ai-stand-in-for-human-survey-takers-not-really/) asking a simple question: can an AI model stand in for real people in a survey?
