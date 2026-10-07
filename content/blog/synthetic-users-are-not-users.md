@@ -3,7 +3,7 @@ title: "Synthetic users are not users: what Pew's AI polling test means for your
 description: "Pew asked an AI model to answer nearly 300 survey questions as real people would. It missed by 12 points on average and erased most of the disagreement. If you test your product with simulated users, the same thing is probably happening to you."
 date: 2026-10-07
 tags: [evals, reliability, llm]
-draft: true
+draft: false
 ---
 
 On 30 September, Pew Research Center published a [set of studies](https://www.pewresearch.org/data-labs/2026/09/30/can-ai-stand-in-for-human-survey-takers-not-really/) asking a simple question: can an AI model stand in for real people in a survey?
