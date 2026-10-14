@@ -4,6 +4,7 @@ description: "A developer flipped a 70% coin 1,000 times through OpenAI's new De
 date: 2026-10-14
 tags: [llm, evals, structured-output, reliability]
 draft: false
+linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7516026632491642881/
 ---
 
 On 6 October, OpenAI put its [Decisions API into public beta](https://community.openai.com/t/decisions-api-is-now-available-in-public-beta/1403877). A day later, a developer on OpenAI's community forum ran it against a loaded coin that lands heads 70% of the time.
